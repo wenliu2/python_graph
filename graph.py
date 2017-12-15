@@ -21,6 +21,10 @@ class Graph():
         return self.G
 
     def convertToInnerData(self, fileJsonData):
+        """
+        convert data structure loading from json file
+        to inner format.
+        """
         innerData = {}
         for node in fileJsonData["nodes"]:
             (name, data) = (node["id"], node["data"])
@@ -38,6 +42,9 @@ class Graph():
         #self.innerData = innerData
 
     def convertToDijkstraData(self, innerData):
+        """
+        convert inner data structure to Dijkstra graph data.
+        """
         G = {}
         for node in innerData.keys():
             G[node] = {}
